@@ -1,0 +1,1 @@
+prompt("Rock, Paper or Scissors?")
