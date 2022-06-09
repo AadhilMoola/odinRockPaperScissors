@@ -1,34 +1,41 @@
+//Lets computer pick a random number, this number determines whether Rock, Paper or Scissors is chosen
 function computerPlay(){
-    let randomNumber = ((Math.random()*10)+1).toFixed(2);
-    if(randomNumber>3.3 && randomNumber<=6.6){
-        return "rock"
-    }else if(randomNumber>6.6 && randomNumber<=11){
-        return "scissors"
-    }else{
-        return "paper"
-    }
+    let randomNumber = Math.floor(Math.random()*3+1);
+    let ComputerSelection = (randomNumber==1) ? "rock" :
+                            (randomNumber==2) ? "paper" :
+                            (randomNumber==3) ? "scissors" :
+                            "error";
+                            console.log(`Computer Chose ${ComputerSelection}`)
+    return ComputerSelection
 }
 
+//Determines the results based on user selection and computer selection
 function playRound(playerSelection, computerSelection){
         
     if(playerSelection==computerSelection){
-        console.log("Tie")
+        return("It's a Tie")
     } else if(
         (playerSelection=="rock"&&computerSelection=="scissors")||
         (playerSelection=="scissors"&&computerSelection=="paper")||
         (playerSelection=="paper"&&computerSelection=="rock")
     ){
-        console.log("You Win")
-    }else {console.log("You Lose")}
+        return("You Win")
+    }else {return("You Lose")}
 }
 
-function playerChoice(){
-    return prompt("Choose Rock, Paper Scissors")
+//prompt to get user selection stored here
+function playerSelection(){
+    let playerChoice = prompt("Rock , Paper , Scissors");
+    console.log(`You Chose ${playerChoice}`)
+    return playerChoice.toLowerCase();
 }
 
-const playerSelection = playerChoice();
-const computerSelection = computerPlay();
 
-console.log(computerSelection)
 
-playRound(playerSelection.toLowerCase(), computerSelection)
+function game(){
+for(let i=0; i<5; i++){
+console.log(playRound(playerSelection(), computerPlay()))
+}
+}
+
+game()

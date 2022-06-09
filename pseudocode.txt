@@ -1,0 +1,19 @@
+Create a Random Choice variable to assign to PC
+call this function computerPlay as per Odin  
+
+
+Create function that plays a single round.
+Has to take two parameters
+PlayerSelection + computerSelection
+
+Prompt user to select Rock Paper or Scissors for playerSelection
+Has to be case insensitive
+
+
+
+If user chosen Paper
+add to User counter if PC chooses Rock
+add to PC counter if PC chooses Scissors
+Tie if both the same
+
+Repeat process 5 times
